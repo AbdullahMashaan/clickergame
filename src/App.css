@@ -1,3 +1,4 @@
+/* App.css */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -5,7 +6,6 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  background-color: burlywood;
 }
 
 .App {
@@ -28,26 +28,40 @@ button {
   color: white;
   border-radius: 15px;
   border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.red-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff4500;
 }
 
 .click-count {
   font-size: 2rem;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .top-image {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 150px;  
+  top: 20%;
+  left: 20%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 400px;
   height: auto;
+  animation: spin 5s linear infinite;
+  border-radius: 200%;
 }
 
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 .coin-counter {
   display: flex;
   align-items: center;
-  font-size: 5rem;
+  font-size: 4rem;
   position: absolute;
   top: 20%;
   right: 100px;
@@ -55,7 +69,37 @@ button {
 }
 
 .coin-image {
-  width: 5rem; 
-  height: 5rem; 
+  width: 4rem;
+  height: 4rem;
   margin-right: 0.5rem;
+}
+
+.upgrades {
+  margin-top: 20px;
+}
+
+.upgrade {
+  margin-bottom: 10px;
+}
+
+.upgrade p {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #ff4500;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+.upgrade button {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upgrade button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff4500;
 }
